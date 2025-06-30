@@ -5,22 +5,22 @@
         <link rel="stylesheet" href="YxFSite.css">
         <style>
         .bioform {
-        background-color: lightblue;
-        margin: 20%;
-        padding: 20px;
-        border: 5px solid black;
-        border-radius: 20px;
-        float: none;
-        text-align: center;
+            background-color: lightblue;
+            margin: 20%;
+            padding: 20px;
+            border: 5px solid black;
+            border-radius: 20px;
+            float: none;
+            text-align: center;
         }
-        
+
         h4 {
-        display: inline-block;
-        background-color: aquamarine;
-        border: 2px solid black;
-        padding: 5px;
-        border-radius: 10px;
-        } 
+            display: inline-block;
+            background-color: aquamarine;
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 10px;
+        }
 
         input, select, textarea {
             display: inline-block;
@@ -34,8 +34,42 @@
             padding: 5px;
             border-radius: 10px;
         }
-        
-        </style>
+
+        button {
+            background-color: aquamarine;
+            border-radius:  10px;
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+        button:hover {
+            background-color: aliceblue;
+            color: black;
+            cursor: pointer;
+        }
+
+        label {
+            display: inline-block;
+            background-color: aquamarine;
+            border: 2px solid black;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: aquamarine;
+            border-radius:  10px;
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+        button:hover {
+            background-color: aliceblue;
+            color: black;
+            cursor: pointer;
+        }
+
+    </style>
     </head>
     <nav>
         <ul>
@@ -50,29 +84,34 @@
     <body>
         <h1 style="text-align: center;">Contacts</h1> <br><br>
         <form id="formKontak" class="bioform" action="#">
-            <h4>TAG ADMIN</h4><br><br>
-            <label for="Name">Name</label><br><br>
-            <input type="Name" placeholder="Isi nama..."><br><br>
+  <h4>TAG ADMIN</h4><br><br>
+  <label for="Name">Name</label><br><br>
+  <input type="text" name="nama" placeholder="Isi nama..." required><br><br>
 
-            <label for="topik">Topik Pesan:</label><br><br>
-            <select name="topik" id="topik">
-                <option value="saran">Saran</option>
-                <option value="kerjasama">Kerja Sama</option>
-                <option value="pertanyaan">Pertanyaan</option>
-                <option value="lainnya">Lainnya</option>
-            </select><br><br>
+  <label for="email">Email</label><br><br>
+  <input type="email" id="email" name="email" placeholder="Isi email..." required><br><br>
 
-            <label for="pesan">Pesan</label><br><br>
-            <textarea name="pesan" id="pesan" rows="5" cols="30" placeholder="Tulis pesanmu di sini..."></textarea><br><br>
+  <label for="topik">Topik Pesan:</label><br><br>
+  <select name="topik" id="topik" required>
+    <option value="saran">Saran</option>
+    <option value="kerjasama">Kerja Sama</option>
+    <option value="pertanyaan">Pertanyaan</option>
+    <option value="lainnya">Lainnya</option>
+  </select><br><br>
 
-            <button type="submit">Kirim</button>
-            <script>
-                const form = document.getElementById('formKontak');
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault(); // Mencegah reload
-                alert("Terima kasih, " + form.nama.value + "! Pesanmu sudah kami terima.");
-                });
-            </script>
-        </form>
+  <label for="pesan">Pesan</label><br><br>
+  <textarea name="pesan" id="pesan" rows="5" cols="30" placeholder="Tulis pesanmu di sini..."></textarea><br><br>
+
+  <button type="submit">Kirim</button>
+</form>
+
+<script>
+  const form = document.getElementById('formKontak'); // KONSISTEN
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah reload
+    alert("Terima kasih, " + form.nama.value + "! Pesanmu sudah kami terima.");
+  });
+</script>
+
     </body>
 </html>
