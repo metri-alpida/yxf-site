@@ -84,34 +84,34 @@
     <body>
         <h1 style="text-align: center;">Contacts</h1> <br><br>
         <form id="formKontak" class="bioform" action="#">
-  <h4>TAG ADMIN</h4><br><br>
-  <label for="Name">Name</label><br><br>
-  <input type="text" name="nama" placeholder="Isi nama..." required><br><br>
+            <h4>TAG ADMIN</h4><br><br>
+            <label for="Name">Name</label><br><br>
+            <input type="text" name="nama" placeholder="Isi nama..." required><br><br>
 
-  <label for="email">Email</label><br><br>
-  <input type="email" id="email" name="email" placeholder="Isi email..." required><br><br>
+            <label for="email">Email</label><br><br>
+            <input type="email" id="email" name="email" placeholder="Isi email..." required><br><br>
+            
+            <label for="topik">Topik Pesan:</label><br><br>
+            <select name="topik" id="topik" required>
+                <option value="saran">Saran</option>
+                <option value="kerjasama">Kerja Sama</option>
+                <option value="pertanyaan">Pertanyaan</option>
+                <option value="lainnya">Lainnya</option>
+            </select><br><br>
 
-  <label for="topik">Topik Pesan:</label><br><br>
-  <select name="topik" id="topik" required>
-    <option value="saran">Saran</option>
-    <option value="kerjasama">Kerja Sama</option>
-    <option value="pertanyaan">Pertanyaan</option>
-    <option value="lainnya">Lainnya</option>
-  </select><br><br>
+            <label for="pesan">Pesan</label><br><br>
+        <textarea name="pesan" id="pesan" rows="5" cols="30" placeholder="Tulis pesanmu di sini..."></textarea><br><br>
 
-  <label for="pesan">Pesan</label><br><br>
-  <textarea name="pesan" id="pesan" rows="5" cols="30" placeholder="Tulis pesanmu di sini..."></textarea><br><br>
+        <button type="submit">Kirim</button>
+    </form>
 
-  <button type="submit">Kirim</button>
-</form>
-
-<script>
-  const form = document.getElementById('formKontak'); // KONSISTEN
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Mencegah reload
-    alert("Terima kasih, " + form.nama.value + "! Pesanmu sudah kami terima.");
-  });
-</script>
-
+    <script>
+        const form = document.getElementById('formKontak'); // KONSISTEN
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah reload
+        alert("Terima kasih, " + form.nama.value + "! Pesanmu sudah kami terima.");
+            form.reset(); // Mengosongkan form setelah submit
+        });
+    </script>
     </body>
 </html>
